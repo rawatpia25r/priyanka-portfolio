@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: #161616;
+  color: #e5e5e5;
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #b224ef, #f66a42);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-custom {
+  background: linear-gradient(to right, #b224ef, #f66a42);
+}
+
+.border-gradient-custom {
+  position: relative;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+.border-gradient-custom::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(to right, #b224ef, #7579ff);
+}
+
+html {
+  scroll-behavior: smooth;
+}
