@@ -255,9 +255,13 @@ const ProjectCard = ({ project, index }) => {
       {/* Glow overlay */}
       <div className="card-glow" />
 
-      {/* Illustration / Thumbnail Area */}
-      <div className="project-thumb-wrapper h-[220px] bg-[#12121f]">
-        <Illustration />
+      {/* Illustration / Thumbnail Area with hover zoom + overlay */}
+      <div className="project-thumb-wrapper h-[220px] bg-[#12121f] group/thumb relative">
+        <div className="w-full h-full transition-transform duration-500 group-hover/thumb:scale-[1.05]">
+          <Illustration />
+        </div>
+        {/* Dark overlay that fades on hover */}
+        <div className="absolute inset-0 bg-[#12121f]/30 group-hover/thumb:bg-transparent transition-all duration-500 pointer-events-none z-[3]" />
       </div>
 
       {/* Content Area */}
@@ -315,7 +319,7 @@ const ProjectCard = ({ project, index }) => {
             href={liveDemo}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-live-demo flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white font-semibold text-sm"
+            className="btn-live-demo flex-1 flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-white font-semibold text-sm shadow-[0_2px_12px_rgba(0,0,0,0.2)]"
             style={{
               background: `linear-gradient(135deg, ${accentFrom}, ${accentTo})`,
             }}
@@ -329,7 +333,7 @@ const ProjectCard = ({ project, index }) => {
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-github flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-gray-300 font-semibold text-sm border border-gray-700 bg-[#1a1a2e]/80"
+            className="btn-github flex-1 flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-gray-300 font-semibold text-sm border border-gray-700/60 bg-[#1a1a2e]/80 shadow-[0_2px_12px_rgba(0,0,0,0.15)]"
           >
             <GitHubIcon />
             GitHub

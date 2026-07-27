@@ -13,7 +13,7 @@ const DocumentIcon = () => (
   </svg>
 );
 
-const Hero = () => {
+const Hero = ({ onOpenResume }) => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-28 pb-12 px-4 sm:px-6 lg:px-8 relative bg-[#161616]">
       <div className="max-w-4xl mx-auto text-center z-10">
@@ -34,16 +34,21 @@ const Hero = () => {
           </div>
         </div>
         
-        <h1 className="text-4xl md:text-[54px] font-bold leading-tight tracking-tight mb-6 mt-6">
+        <h1 className="text-4xl md:text-[54px] font-bold leading-tight tracking-tight mb-4 mt-6">
           <span className="text-gradient">I'm Priyanka Rawat,</span> <span className="text-white">a Passionate<br/>Full Stack Developer.</span>
         </h1>
+
+        {/* Professional Tagline */}
+        <p className="text-sm md:text-base text-gray-500 font-medium tracking-widest uppercase mb-8">
+          Full Stack Developer &nbsp;•&nbsp; MERN Stack &nbsp;•&nbsp; Building Modern Web Applications
+        </p>
         
         <p className="text-[17px] md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed mb-10">
           Aspiring full-stack developer building real-world projects with React Js, Node Js, MongoDB, and Tailwind Css.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mt-8">
-          {/* Connect With Me — premium gradient button */}
+          {/* Connect With Me */}
           <a
             href="#contact"
             className="hero-btn-primary group/btn w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4 rounded-full bg-gradient-custom text-white font-semibold text-[17px] tracking-wide shadow-[0_4px_20px_rgba(178,36,239,0.25)] hover:shadow-[0_8px_32px_rgba(178,36,239,0.4)] hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300"
@@ -51,18 +56,14 @@ const Hero = () => {
             <SendIcon />
             Connect With Me
           </a>
-          {/* My Resume — outlined premium button */}
-          <a
-            href="#"
+          {/* My Resume */}
+          <button
+            onClick={onOpenResume}
             className="hero-btn-secondary group/btn w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4 rounded-full border-2 border-gray-500/50 text-white font-semibold text-[17px] tracking-wide hover:border-[#b224ef]/60 hover:shadow-[0_8px_28px_rgba(178,36,239,0.15)] hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-white/[0.03] transition-all duration-300"
-            onClick={(e) => {
-                e.preventDefault();
-                alert("Resume download functionality will be added soon.");
-            }}
           >
             <DocumentIcon />
             My Resume
-          </a>
+          </button>
         </div>
       </div>
     </section>
