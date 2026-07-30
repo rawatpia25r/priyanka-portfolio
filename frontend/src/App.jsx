@@ -6,11 +6,9 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Education from './components/Education';
 import ContactFooter from './components/ContactFooter';
-import ResumePage from './components/ResumePage';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [showResume, setShowResume] = useState(false);
 
   // Loading animation
   useEffect(() => {
@@ -23,7 +21,7 @@ function App() {
     if (loading) return;
 
     const revealElements = document.querySelectorAll('.reveal-on-scroll');
-    
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -40,17 +38,6 @@ function App() {
     return () => observer.disconnect();
   }, [loading]);
 
-  // Handle Resume page open/close
-  const openResume = () => {
-    setShowResume(true);
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeResume = () => {
-    setShowResume(false);
-    document.body.style.overflow = '';
-  };
-
   if (loading) {
     return (
       <div className="fixed inset-0 bg-[#161616] flex items-center justify-center z-[200]">
@@ -66,18 +53,15 @@ function App() {
 
   return (
     <div className="bg-[#161616] min-h-screen text-white animate-fadeInUp">
-      <Navbar onResumePage={showResume} />
+      <Navbar />
       <main>
-        <Hero onOpenResume={openResume} />
+        <Hero />
         <div className="reveal-on-scroll"><AboutSkills /></div>
         <div className="reveal-on-scroll"><Experience /></div>
         <div className="reveal-on-scroll"><Projects /></div>
         <div className="reveal-on-scroll"><Education /></div>
       </main>
       <div className="reveal-on-scroll"><ContactFooter /></div>
-
-      {/* Resume Overlay */}
-      {showResume && <ResumePage onClose={closeResume} />}
     </div>
   );
 }

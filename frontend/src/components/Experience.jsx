@@ -3,6 +3,17 @@ import React from 'react';
 const Experience = () => {
   const experiences = [
     {
+      role: 'Frontend Development Intern',
+      company: 'Guidevera',
+      date: 'Present',
+      description: [
+        'Developed and maintained responsive, user-friendly frontend interfaces using React.js and CSS, ensuring consistent design, cross-device compatibility, and an intuitive user experience across the platform.',
+        'Integrated frontend components with backend services using Axios, handling API requests efficiently and ensuring seamless, real-time data synchronization between client and server.',
+        'Built and enhanced the admin panel with features for managing users, content, and application data, improving operational efficiency and giving administrators better control and visibility.',
+        'Debugged and optimized existing UI components to improve page load performance and eliminate rendering inconsistencies across browsers.'
+      ]
+    },
+    {
       role: 'Software Development Intern',
       company: 'Bharat Electronics Limited (BEL)',
       date: 'Recent',
