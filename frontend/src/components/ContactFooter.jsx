@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 /* ── Icon Components ── */
 const MailIcon = () => (
@@ -74,6 +75,43 @@ const contactCards = [
 ];
 
 const ContactFooter = () => {
+  const form = useRef(null);
+  const [sending, setSending] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
+  const [statusType, setStatusType] = useState(''); // 'success' or 'error'
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    console.log('FORM SUBMITTED');
+
+    setSending(true);
+    setStatusMessage('');
+    setStatusType('');
+
+    try {
+      const response = await emailjs.sendForm(
+        'service_aezaotk',
+        'template_kqbplbh',
+        form.current,
+        {
+          publicKey: 'iLLUO7fXq-m8TSsdn',
+        }
+      );
+
+      console.log('EMAIL SENT:', response.status, response.text);
+      setStatusMessage('Message sent successfully! 🎉');
+      setStatusType('success');
+      form.current.reset();
+    } catch (error) {
+      console.error('EMAILJS ERROR:', error);
+      console.error('ERROR TEXT:', error?.text);
+      setStatusMessage(error?.text || 'Failed to send message. Please try again.');
+      setStatusType('error');
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <>
       {/* ── Contact Section ── */}
@@ -133,40 +171,52 @@ const ContactFooter = () => {
             {/* Right: Contact Form */}
             <div className="bg-[#1a1a1a]/80 backdrop-blur-sm p-8 rounded-2xl border border-white/[0.06] shadow-[0_4px_24px_rgba(0,0,0,0.2)]">
               <h3 className="text-2xl font-bold text-white mb-6">Send me a message</h3>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <form ref={form} className="space-y-4" onSubmit={sendEmail}>
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">Your Name</label>
+                  <label htmlFor="from_name" className="block text-sm font-medium text-gray-400 mb-1">Your Name</label>
                   <input 
                     type="text" 
-                    id="name" 
+                    id="from_name" 
+                    name="from_name"
                     className="w-full bg-[#111111] border border-gray-700/50 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#b224ef] transition-colors"
                     placeholder="Priyanka Rawat"
+                    required
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1">Your Email</label>
+                  <label htmlFor="from_email" className="block text-sm font-medium text-gray-400 mb-1">Your Email</label>
                   <input 
                     type="email" 
-                    id="email" 
+                    id="from_email" 
+                    name="from_email"
                     className="w-full bg-[#111111] border border-gray-700/50 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#b224ef] transition-colors"
                     placeholder="rawatpia@example.com"
+                    required
                   />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">Message</label>
                   <textarea 
                     id="message" 
+                    name="message"
                     rows="4" 
                     className="w-full bg-[#111111] border border-gray-700/50 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#b224ef] transition-colors resize-none"
                     placeholder="Hello Priyanka..."
+                    required
                   ></textarea>
                 </div>
                 <button 
                   type="submit"
-                  className="w-full bg-gradient-custom text-white font-bold py-3.5 px-4 rounded-lg hover:opacity-90 hover:shadow-[0_4px_20px_rgba(178,36,239,0.3)] hover:-translate-y-0.5 transition-all duration-300"
+                  disabled={sending}
+                  className="w-full bg-gradient-custom text-white font-bold py-3.5 px-4 rounded-lg hover:opacity-90 hover:shadow-[0_4px_20px_rgba(178,36,239,0.3)] hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {sending ? 'Sending...' : 'Send Message'}
                 </button>
+                {statusMessage && (
+                  <p className={`text-sm text-center mt-2 ${statusType === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                    {statusMessage}
+                  </p>
+                )}
               </form>
             </div>
           </div>
