@@ -314,30 +314,34 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 mt-auto">
-          <a
-            href={liveDemo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-live-demo flex-1 flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-white font-semibold text-sm shadow-[0_2px_12px_rgba(0,0,0,0.2)]"
-            style={{
-              background: `linear-gradient(135deg, ${accentFrom}, ${accentTo})`,
-            }}
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              <ExternalLinkIcon />
-              Live Demo
-            </span>
-          </a>
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-github flex-1 flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-gray-300 font-semibold text-sm border border-gray-700/60 bg-[#1a1a2e]/80 shadow-[0_2px_12px_rgba(0,0,0,0.15)]"
-          >
-            <GitHubIcon />
-            GitHub
-          </a>
+        <div className="flex flex-col sm:flex-row gap-3 mt-auto pt-4">
+          {liveDemo && (
+            <a
+              href={liveDemo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-live-demo flex-1 flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-white font-semibold text-[15px] shadow-[0_4px_15px_rgba(0,0,0,0.3)]"
+              style={{
+                background: `linear-gradient(135deg, ${accentFrom}, ${accentTo})`,
+              }}
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                <ExternalLinkIcon />
+                Live Demo
+              </span>
+            </a>
+          )}
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-github flex-1 flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-gray-200 font-semibold text-[15px] border border-gray-700/60 bg-white/5 backdrop-blur-sm hover:bg-white/10 shadow-[0_4px_15px_rgba(0,0,0,0.2)]"
+            >
+              <GitHubIcon />
+              GitHub
+            </a>
+          )}
         </div>
       </div>
     </div>

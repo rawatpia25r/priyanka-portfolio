@@ -51,7 +51,7 @@ const Hero = () => {
           {/* Connect With Me */}
           <a
             href="#contact"
-            className="hero-btn-primary group/btn w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4 rounded-full bg-gradient-custom text-white font-semibold text-[17px] tracking-wide shadow-[0_4px_20px_rgba(178,36,239,0.25)] hover:shadow-[0_8px_32px_rgba(178,36,239,0.4)] hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300"
+            className="hero-btn-primary group/btn w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4 rounded-full bg-gradient-custom text-white font-semibold text-[16px] tracking-wide shadow-[0_4px_20px_rgba(178,36,239,0.3)] hover:shadow-[0_8px_32px_rgba(178,36,239,0.5)] hover:-translate-y-1 transition-all duration-300"
           >
             <SendIcon />
             Connect With Me
@@ -61,10 +61,10 @@ const Hero = () => {
             href="/resume"
             target="_blank"
             rel="noopener noreferrer"
-            className="hero-btn-secondary group/btn w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4 rounded-full border-2 border-gray-500/50 text-white font-semibold text-[17px] tracking-wide hover:border-[#b224ef]/60 hover:shadow-[0_8px_28px_rgba(178,36,239,0.15)] hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-white/[0.03] transition-all duration-300"
+            className="hero-btn-secondary group/btn w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm text-white font-semibold text-[16px] tracking-wide hover:border-[#b224ef]/50 hover:bg-white/10 hover:shadow-[0_8px_28px_rgba(178,36,239,0.2)] hover:-translate-y-1 transition-all duration-300"
           >
             <DocumentIcon />
-            My Resume
+            View Resume
           </a>
         </div>
       </div>

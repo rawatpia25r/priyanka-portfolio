@@ -47,7 +47,7 @@ const ResumeViewer = () => {
           <a
             href={resumePath}
             download
-            className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-gradient-to-r from-[#b224ef] to-[#7579ff] text-white font-semibold text-xs sm:text-sm hover:shadow-[0_4px_15px_rgba(178,36,239,0.4)] transition-all duration-300"
+            className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-gradient-to-r from-[#b224ef] to-[#7579ff] text-white font-semibold text-xs sm:text-sm hover:shadow-[0_4px_15px_rgba(178,36,239,0.4)] hover:-translate-y-1 transition-all duration-300"
           >
             <DownloadIcon />
             <span className="hidden sm:inline">Download Resume</span>

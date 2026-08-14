@@ -73,7 +73,7 @@ const Navbar = () => {
               href="/resume"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative text-[14px] lg:text-[15px] font-medium transition-colors duration-300 py-1 text-gray-400 hover:text-gray-200"
+              className="relative text-[14px] lg:text-[15px] font-medium transition-colors duration-300 py-1 text-gray-400 hover:text-white"
             >
               Resume
             </a>
@@ -83,7 +83,7 @@ const Navbar = () => {
           <div className="hidden md:flex w-1/4 justify-end">
             <a
               href="#contact"
-              className="bg-gradient-custom text-white px-7 py-2.5 rounded-full font-medium text-[15px] hover:opacity-90 transition-all duration-300 hover:shadow-[0_4px_20px_rgba(178,36,239,0.3)] hover:-translate-y-0.5"
+              className="bg-gradient-custom text-white px-7 py-2.5 rounded-full font-semibold text-[15px] shadow-[0_4px_20px_rgba(178,36,239,0.25)] hover:shadow-[0_8px_24px_rgba(178,36,239,0.4)] hover:-translate-y-1 transition-all duration-300"
             >
               Connect With Me
             </a>
