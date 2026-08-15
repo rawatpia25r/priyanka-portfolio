@@ -70,7 +70,7 @@ const Navbar = () => {
               );
             })}
             <a
-              href="/resume"
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="relative text-[14px] lg:text-[15px] font-medium transition-colors duration-300 py-1 text-gray-400 hover:text-white"
@@ -122,8 +122,8 @@ const Navbar = () => {
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActive
-                      ? 'text-white bg-[#b224ef]/10 border-l-2 border-[#b224ef]'
-                      : 'text-gray-300 hover:text-white'
+                    ? 'text-white bg-[#b224ef]/10 border-l-2 border-[#b224ef]'
+                    : 'text-gray-300 hover:text-white'
                     }`}
                 >
                   {link.name}
@@ -131,7 +131,7 @@ const Navbar = () => {
               );
             })}
             <a
-              href="/resume"
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}

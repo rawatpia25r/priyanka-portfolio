@@ -19,7 +19,7 @@ const ResumeViewer = () => {
     <div className="h-screen w-screen bg-[#161616] text-white flex flex-col overflow-hidden font-sans">
       {/* Top bar / Header (70px height) */}
       <div className="shrink-0 h-[70px] bg-[#161616] border-b border-white/[0.04] flex items-center justify-between px-4 sm:px-6 lg:px-8">
-        
+
         {/* Left: Back Button */}
         <div className="flex-1 flex justify-start">
           <a

@@ -58,7 +58,7 @@ const Hero = () => {
           </a>
           {/* My Resume */}
           <a
-            href="/resume"
+            href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="hero-btn-secondary group/btn w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm text-white font-semibold text-[16px] tracking-wide hover:border-[#b224ef]/50 hover:bg-white/10 hover:shadow-[0_8px_28px_rgba(178,36,239,0.2)] hover:-translate-y-1 transition-all duration-300"
